@@ -1,0 +1,6 @@
+14.Constraints in SQL
+not null,unique:CREATE TABLE Student (Rollno int NOT NULL,Name varchar(30),unique(Rollno));
+Primary Key:CREATE TABLE Student (Rollno int NOT NULL,Name   varchar(30),Primary Key(Rollno));
+Foreign Key:CREATE TABLE Teachers (staffid int NOT NULL,rollno int ,Foreign Key(Rollno) references Student(Rollno),Primary Key(staffid));
+Check:CREATE TABLE Employee(ID Not NULL,Name varchar(20),Course varchar(2) ,check(COURSE='BE'));
+Default:CREATE TABLE EmployeeDetails(ID Not NULL,Name varchar(20),salary int default salary '2000');

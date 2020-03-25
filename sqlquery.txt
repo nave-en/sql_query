@@ -1,0 +1,12 @@
+1.SELECT CustomerName from Customers where City="London";
+2.SELECT Products.ProductName,Categories.CategoryName From Products INNER JOIN Categories on Products.CategoryID=Categories.CategoryID order by CategoryName desc; 
+3.SELECT Products.ProductName,Categories.CategoryName,Suppliers.SupplierName from Suppliers Inner Join Products Inner Join Categories where Categories.CategoryID=Products.CategoryID and Suppliers.SupplierID=Products.CategoryID and Suppliers.Country="UK"; 
+4.SELECT Products.ProductName,OrderDetails.Quantity as totalQuantity from Products Inner Join OrderDetails Inner Join Orders where Orders.OrderID=OrderDetails.OrderID and OrderDetails.ProductID=Products.ProductID group By(Products.ProductName);
+5.Select Orders.CustomerID,Orders.ShipperID,Shippers.ShipperName,count(Orders.CustomerID)as Numberoforders from Orders Inner Join  Shippers where Orders.ShipperID=Shippers.ShipperID group By(ShipperName);
+6.Select Orders.CustomerID,Orders.ShipperID,Shippers.ShipperName,count(Orders.CustomerID)as Numberoforders from Orders Inner Join  Shippers where Orders.ShipperID=Shippers.ShipperID group by(CustomerID) HAVING COUNT(Orders.CustomerID) > 2;
+7.select Orders.OrderID,2*(Quantity) from OrderDetails inner join orders where Orders.orderid=OrderDetails.orderid and OrderDetails.quantity > 4 and OrderDetails.quantity < 11 group by(Orders.OrderID);
+10.Delete From Orders where CustomerId=13;
+11.Drop table Employees;
+Drop:Its entirely deletes the table data and also removes the structure of the table.
+Delete from Employees;
+Delete:its used to delete the values of table with particular condition,if the condition is not used its entirely deletes the table but the structure remains in the table.

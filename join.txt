@@ -1,0 +1,9 @@
+INNER JOIN
+SELECT Orders.CustomerID,Orders.OrderDate,OrderDetails.Quantity from Orders Inner join OrderDetails where orders.orderID=OrderDetails.orderID;
+LEFT JOIN
+SELECT Customers.CustomerName,Customers.City,Orders.OrderID,Orders.OrderDate from Customers left join Orders on Customers.CustomerID=Orders.CustomerID;
+RIGHT JOIN
+SELECT * from Orders Right join Customers on Orders.CustomerID=Customers.CustomerID;
+FULL JOIN
+SELECT * from Orders FULL join Employees on Orders.EmployeeID=Employees.EmployeeID;
+
